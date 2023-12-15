@@ -1,0 +1,367 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "categoryId": 2,
+      "productName": "Orange Juice",
+      "slug": "orange-juice",
+      "image": "images/product.jpg",
+      "desc": "Freshly squeezed orange juice with a burst of citrus flavor.",
+      "price": 5.99
+    },
+    {
+      "id": 2,
+      "categoryId": 1,
+      "productName": "Apple Cider",
+      "slug": "apple-cider",
+      "image": "images/product.jpg",
+      "desc": "A delightful blend of fresh apples, perfect for any occasion.",
+      "price": 4.99
+    },
+    {
+      "id": 4,
+      "categoryId": 1,
+      "productName": "Peach Slices",
+      "slug": "peach-slices",
+      "image": "images/product.jpg",
+      "desc": "Juicy and sweet peach slices, ready to be enjoyed.",
+      "price": 8.99
+    },
+    {
+      "id": 5,
+      "categoryId": 2,
+      "productName": "Berry Medley",
+      "slug": "berry-medley",
+      "image": "images/product.jpg",
+      "desc": "A mix of delicious berries for a refreshing and antioxidant-rich treat.",
+      "price": 6.49
+    },
+    {
+      "id": 6,
+      "categoryId": 2,
+      "productName": "Boysenberry Jam",
+      "slug": "boysenberry-jam",
+      "image": "images/product.jpg",
+      "desc": "Homemade boysenberry jam with a perfect balance of sweetness.",
+      "price": 7.99
+    },
+    {
+      "id": 7,
+      "categoryId": 7,
+      "productName": "Organic Dried Pears",
+      "slug": "organic-dried-pears",
+      "image": "images/product.jpg",
+      "desc": "Sun-dried organic pears, a healthy and natural snack.",
+      "price": 10.99
+    },
+    {
+      "id": 8,
+      "categoryId": 2,
+      "productName": "Cranberry Sauce",
+      "slug": "cranberry-sauce",
+      "image": "images/product.jpg",
+      "desc": "Tart and delicious cranberry sauce, perfect for holiday meals.",
+      "price": 5.99
+    },
+    {
+      "id": 9,
+      "categoryId": 6,
+      "productName": "Kobe Beef Jerky",
+      "slug": "kobe-beef-jerky",
+      "image": "images/product.jpg",
+      "desc": "Premium Kobe beef jerky, a savory and protein-packed snack.",
+      "price": 12.99
+    },
+    {
+      "id": 10,
+      "categoryId": 8,
+      "productName": "Salmon Roe (Ikura)",
+      "slug": "salmon-roe-ikura",
+      "image": "images/product.jpg",
+      "desc": "Delicious and savory salmon roe, a delicacy in Japanese cuisine.",
+      "price": 15.99
+    },
+    {
+      "id": 11,
+      "categoryId": 4,
+      "productName": "Cabral Cheese",
+      "slug": "cabral-cheese",
+      "image": "images/product.jpg",
+      "desc": "A rich and flavorful Cabral cheese, perfect for cheese enthusiasts.",
+      "price": 9.99
+    },
+    {
+      "id": 12,
+      "categoryId": 4,
+      "productName": "La Pastora Manchego Cheese",
+      "slug": "la-pastora-manchego-cheese",
+      "image": "images/product.jpg",
+      "desc": "Traditional Manchego cheese from La Pastora, a Spanish delicacy.",
+      "price": 12.99
+    },
+    {
+      "id": 13,
+      "categoryId": 8,
+      "productName": "Kombu Seaweed",
+      "slug": "kombu-seaweed",
+      "image": "images/product.jpg",
+      "desc": "Nutrient-rich Kombu seaweed, a staple in Japanese cuisine.",
+      "price": 7.99
+    },
+    {
+      "id": 14,
+      "categoryId": 7,
+      "productName": "Silken Tofu",
+      "slug": "silken-tofu",
+      "image": "images/product.jpg",
+      "desc": "Smooth and creamy silken tofu, versatile for various dishes.",
+      "price": 5.99
+    },
+    {
+      "id": 15,
+      "categoryId": 2,
+      "productName": "Genen Soy Sauce",
+      "slug": "genen-soy-sauce",
+      "image": "images/product.jpg",
+      "desc": "Authentic Genen Shouyu soy sauce for enhancing your dishes.",
+      "price": 3.99
+    },
+    {
+      "id": 16,
+      "categoryId": 3,
+      "productName": "Pavlova Dessert",
+      "slug": "pavlova-dessert",
+      "image": "images/product.jpg",
+      "desc": "Light and airy Pavlova dessert, a sweet delight for any occasion.",
+      "price": 8.49
+    },
+    {
+      "id": 17,
+      "categoryId": 6,
+      "productName": "Guava",
+      "slug": "guava",
+      "image": "images/product.jpg",
+      "desc": "Fresh and tropical Guava, bursting with flavor and nutrients.",
+      "price": 4.99
+    },
+    {
+      "id": 18,
+      "categoryId": 8,
+      "productName": "Carnarvon Tiger Prawns",
+      "slug": "carnarvon-tiger-prawns",
+      "image": "images/product.jpg",
+      "desc": "Succulent Carnarvon Tiger Prawns, perfect for seafood lovers.",
+      "price": 18.99
+    },
+    {
+      "id": 19,
+      "categoryId": 3,
+      "productName": "Chocolate Biscuits",
+      "slug": "chocolate-biscuits",
+      "image": "images/product.jpg",
+      "desc": "Teatime Chocolate Biscuits, a delightful treat with your favorite drink.",
+      "price": 6.99
+    },
+    {
+      "id": 20,
+      "categoryId": 3,
+      "productName": "Sir Rodney's Marmalade",
+      "slug": "sir-rodneys-marmalade",
+      "image": "images/product.jpg",
+      "desc": "Sir Rodney's Marmalade, a classic spread with a tangy twist.",
+      "price": 7.49
+    },
+    {
+      "id": 21,
+      "categoryId": 3,
+      "productName": "Sir Rodney's Scones",
+      "slug": "sir-rodneys-scones",
+      "image": "images/product.jpg",
+      "desc": "Sir Rodney's Scones, perfect for a delightful afternoon tea.",
+      "price": 5.99
+    },
+    {
+      "id": 22,
+      "categoryId": 5,
+      "productName": "Gustaf's Crispbread",
+      "slug": "gustafs-crispbread",
+      "image": "images/product.jpg",
+      "desc": "Gustaf's Knäckebröd, a crunchy and delicious Swedish crispbread.",
+      "price": 4.99
+    },
+    {
+      "id": 23,
+      "categoryId": 5,
+      "productName": "Tunnbröd",
+      "slug": "tunnbrod",
+      "image": "images/product.jpg",
+      "desc": "Tunnbröd, a traditional Swedish flatbread for various toppings.",
+      "price": 3.99
+    },
+    {
+      "id": 24,
+      "categoryId": 1,
+      "productName": "Guaraná Fantástica",
+      "slug": "guarana-fantastica",
+      "image": "images/product.jpg",
+      "desc": "Guaraná Fantástica, a refreshing and energizing Brazilian beverage.",
+      "price": 6.99
+    },
+    {
+      "id": 25,
+      "categoryId": 3,
+      "productName": "NuNuCa Hazelnut Cream",
+      "slug": "nunuca-hazelnut-cream",
+      "image": "images/product.jpg",
+      "desc": "NuNuCa Nuß-Nougat-Creme, a delightful hazelnut cream for sweet treats.",
+      "price": 9.49
+    },
+    {
+      "id": 26,
+      "categoryId": 3,
+      "productName": "Gumbär Gummy Bears",
+      "slug": "gumbar-gummy-bears",
+      "image": "images/product.jpg",
+      "desc": "Gumbär Gummibärchen, colorful and chewy gummy bears for all ages.",
+      "price": 2.99
+    },
+    {
+      "id": 27,
+      "categoryId": 3,
+      "productName": "Schoggi Chocolate",
+      "slug": "schoggi-chocolate",
+      "image": "images/product.jpg",
+      "desc": "Schoggi Schokolade, Swiss chocolate for a rich and indulgent experience.",
+      "price": 11.99
+    },
+    {
+      "id": 28,
+      "categoryId": 7,
+      "productName": "Rössle Sauerkraut",
+      "slug": "rossle-sauerkraut",
+      "image": "images/product.jpg",
+      "desc": "Rössle Sauerkraut, a classic German fermented cabbage dish.",
+      "price": 4.49
+    },
+    {
+      "id": 29,
+      "categoryId": 6,
+      "productName": "Thüringer Rostbratwurst",
+      "slug": "thuringer-rostbratwurst",
+      "image": "images/product.jpg",
+      "desc": "Thüringer Rostbratwurst, a flavorful German sausage for grilling.",
+      "price": 7.99
+    },
+    {
+      "id": 30,
+      "categoryId": 8,
+      "productName": "Nord-Ost Matjeshering",
+      "slug": "nord-ost-matjeshering",
+      "image": "images/product.jpg",
+      "desc": "Nord-Ost Matjeshering, a traditional Nordic herring delicacy.",
+      "price": 10.99
+    },
+    {
+      "id": 31,
+      "categoryId": 4,
+      "productName": "Gorgonzola Telino",
+      "slug": "gorgonzola-telino",
+      "image": "images/product.jpg",
+      "desc": "Gorgonzola Telino, an Italian blue cheese with a bold and creamy flavor.",
+      "price": 13.99
+    },
+    {
+      "id": 32,
+      "categoryId": 4,
+      "productName": "Mascarpone Fabioli",
+      "slug": "mascarpone-fabioli",
+      "image": "images/product.jpg",
+      "desc": "Mascarpone Fabioli, a creamy and versatile Italian cheese for desserts.",
+      "price": 15.49
+    }
+  ],
+  "blog": [
+    {
+      "id": 1,
+      "title": "A Rich Life with Fruits",
+      "slug": "a-rich-life-with-fruits",
+      "image": "img/intro_img/1.jpg",
+      "date": "07.2023",
+      "desc": "A life filled with fruits equals a healthy body. In this article, discover the positive effects of daily fruit consumption on your health. Get lost in the world of fruits, packed with vitamins and antioxidants!"
+    },
+    {
+      "id": 2,
+      "title": "Guide to Creating a Fruit Orchard",
+      "slug": "guide-to-creating-a-fruit-orchard",
+      "image": "img/intro_img/2.jpg",
+      "date": "08.2023",
+      "desc": "Are you ready to enjoy the joy of creating your own fruit orchard? In this guide, you'll find step-by-step instructions, from planting fruit trees to maintenance. Enjoy the taste of fresh and organic fruits from your own garden!"
+    },
+    {
+      "id": 3,
+      "title": "Fruits and Energy: A Natural Vitality Source",
+      "slug": "fruits-and-energy-a-natural-vitality-source",
+      "image": "img/intro_img/3.jpg",
+      "date": "09.2023",
+      "desc": "If you're looking for a natural solution to boost your energy, fruits are perfect for you! In this article, explore various fruits that increase your energy levels and provide vitality throughout the day. Enjoy a healthy boost in energy!"
+    },
+    {
+      "id": 4,
+      "title": "Delicious Recipes for Fruit Enthusiasts",
+      "slug": "delicious-recipes-for-fruit-enthusiasts",
+      "image": "img/intro_img/4.jpg",
+      "date": "10.2023",
+      "desc": "A post specially curated for fruit lovers! Create wonders in the kitchen with sweet and savory fruit recipes. Both healthy and tasty snacks await you!"
+    },
+    {
+      "id": 5,
+      "title": "Types of Fruits and Their Health Benefits",
+      "slug": "types-of-fruits-and-their-health-benefits",
+      "image": "img/intro_img/5.jpg",
+      "date": "11.2023",
+      "desc": "Do you know the unique health benefits of each fruit? In this article, get to know various fruit types and learn about their contributions to your health. Embark on a journey in the colorful world of fruits!"
+    },
+    {
+      "id": 6,
+      "title": "What to Look for When Choosing Fruits?",
+      "slug": "what-to-look-for-when-choosing-fruits",
+      "image": "img/intro_img/6.jpg",
+      "date": "12.2023",
+      "desc": "Tips for selecting fresh and tasty fruits! In this article, learn how to choose fruits correctly while shopping. Make your fruit shopping more enjoyable with the right choices!"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "categoryName": "Citrus Fruits"
+    },
+    {
+      "id": 2,
+      "categoryName": "Berries"
+    },
+    {
+      "id": 3,
+      "categoryName": "Tropical Fruits"
+    },
+    {
+      "id": 4,
+      "categoryName": "Stone Fruits"
+    },
+    {
+      "id": 5,
+      "categoryName": "Melons"
+    },
+    {
+      "id": 6,
+      "categoryName": "Apples and Pears"
+    },
+    {
+      "id": 7,
+      "categoryName": "Exotic Fruits"
+    },
+    {
+      "id": 8,
+      "categoryName": "Grapes"
+    }
+  ]
+}
