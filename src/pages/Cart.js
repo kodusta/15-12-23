@@ -3,7 +3,9 @@ import Hero from "../components/Hero";
 
 
 class Cart extends Component {
+
     render() {
+        console.log(this.props.cart);
         return (
             <>
                 <Hero title="Cart" subtitle="The point of using is that it has a more-or-less normal distribution of letters, as
@@ -50,105 +52,47 @@ class Cart extends Component {
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                    <tr>
-                                                        <td>
-                                                            <figure className="__image">
-                                                                <a href="/">
-                                                                    <img className="lazy" src="img/blank.gif"
-                                                                         data-src="img/goods_img/5.jpg" alt="demo"/>
-                                                                </a>
-                                                            </figure>
-                                                        </td>
-                                                        <td>
-                                                            <a href="/" className="__name">Big Banana</a>
-                                                        </td>
-                                                        <td>
-                                                            <span className="__price">2.99 $</span>
-                                                        </td>
-                                                        <td>
-                                                            <div className="quantity-counter js-quantity-counter">
-                                                                <span className="__btn __btn--minus"/>
-                                                                <input className="__q-input" type="text"
-                                                                       defaultValue={1}/>
-                                                                <span className="__btn __btn--plus"/>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <span className="__total">2.99 $</span>
-                                                        </td>
-                                                        <td>
-                                                            <a className="__remove" href="/"
-                                                               aria-label="Remove this item">
-                                                                <i className="fontello-cancel"/>
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <figure className="__image">
-                                                                <a href="/">
-                                                                    <img className="lazy" src="img/blank.gif"
-                                                                         data-src="img/goods_img/8.jpg" alt="demo"/>
-                                                                </a>
-                                                            </figure>
-                                                        </td>
-                                                        <td>
-                                                            <a href="/" className="__name">Freash Peach</a>
-                                                        </td>
-                                                        <td>
-                                                            <span className="__price">2.99 $</span>
-                                                        </td>
-                                                        <td>
-                                                            <div className="quantity-counter js-quantity-counter">
-                                                                <span className="__btn __btn--minus"/>
-                                                                <input className="__q-input" type="text"
-                                                                       defaultValue={1}/>
-                                                                <span className="__btn __btn--plus"/>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <span className="__total">2.99 $</span>
-                                                        </td>
-                                                        <td>
-                                                            <a className="__remove" href="/"
-                                                               aria-label="Remove this item">
-                                                                <i className="fontello-cancel"/>
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <figure className="__image">
-                                                                <a href="/">
-                                                                    <img className="lazy" src="img/blank.gif"
-                                                                         data-src="img/goods_img/2.jpg" alt="demo"/>
-                                                                </a>
-                                                            </figure>
-                                                        </td>
-                                                        <td>
-                                                            <a href="/" className="__name">Awesome Brocoli</a>
-                                                        </td>
-                                                        <td>
-                                                            <span className="__price">2.99 $</span>
-                                                        </td>
-                                                        <td>
-                                                            <div className="quantity-counter js-quantity-counter">
-                                                                <span className="__btn __btn--minus"/>
-                                                                <input className="__q-input" type="text"
-                                                                       defaultValue={1}/>
-                                                                <span className="__btn __btn--plus"/>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <span className="__total">2.99 $</span>
-                                                        </td>
-                                                        <td>
-                                                            <a className="__remove" href="/"
-                                                               aria-label="Remove this item">
-                                                                <i className="fontello-cancel"/>
-                                                            </a>
-                                                        </td>
-                                                    </tr>
+
+                                                    {this.props.cart.map((item, index) => (
+                                                        <tr key={index}>
+                                                            <td>
+                                                                <figure className="__image">
+                                                                    <a href="/">
+                                                                        <img
+                                                                            src={process.env.PUBLIC_URL + "/" + item.product.image}
+                                                                            alt="demo"/>
+                                                                    </a>
+                                                                </figure>
+                                                            </td>
+                                                            <td>
+                                                                <a href="/"
+                                                                   className="__name">{item.product.productName}</a>
+                                                            </td>
+                                                            <td>
+                                                                <span className="__price">{item.product.price} $</span>
+                                                            </td>
+                                                            <td>
+                                                                <div className="quantity-counter js-quantity-counter">
+                                                                    <span className="__btn __btn--minus"/>
+                                                                    <input className="__q-input" type="text"
+                                                                           defaultValue={item.quantity}/>
+                                                                    <span className="__btn __btn--plus"/>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <span className="__total">{item.product.price} $</span>
+                                                            </td>
+                                                            <td>
+                                                                <p className="__remove"
+                                                                   onClick={() => this.props.removeToCart(item.product)}
+                                                                   aria-label="Remove this item">
+                                                                    <i className="fontello-cancel"/>
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                    ))}
+
+
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -186,7 +130,7 @@ class Cart extends Component {
                                                             <tbody>
                                                             <tr>
                                                                 <td>Subtotal:</td>
-                                                                <td>$96.00</td>
+                                                                <td>{this.props.cart.reduce((total, item) => total + item.product.price * item.quantity, 0)} $</td>
                                                             </tr>
                                                             <tr>
                                                                 <td>Shipping</td>
@@ -194,7 +138,7 @@ class Cart extends Component {
                                                             </tr>
                                                             <tr>
                                                                 <td>Total</td>
-                                                                <td>$99.00</td>
+                                                                <td>{this.props.cart.reduce((total, item) => total + item.product.price * item.quantity, 0) + 3} $</td>
                                                             </tr>
                                                             </tbody>
                                                         </table>

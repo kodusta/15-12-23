@@ -1,12 +1,19 @@
-import React, {Component} from 'react';
+import React, {useEffect} from 'react';
 import Hero from "../components/Hero";
 import ProductCard from "../components/ProductCard";
 import Categories from "../components/Categories";
+import {useParams} from "react-router-dom";
 
+const Category = ({categories, getProducts, products, addToCart, getCategoryName}) => {
+    const {categoryId} = useParams();
+    console.log(categoryId);
+    useEffect(() => {
+        const product = getProducts(categoryId);
+        console.log(product);
+    }, [categoryId]);
 
-class Shop extends Component {
-    render() {
-        return (
+    return (
+        <>
             <>
                 <Hero title="Shop" subtitle="The point of using is that it has a more-or-less normal distribution of letters, as
                                     opposed to using Content here content here making it look"/>
@@ -21,8 +28,8 @@ class Shop extends Component {
                                                 className="fontello-cancel"/></span>
                                             <div className="goods-filter__inner">
                                                 <h4 className="goods-filter__title">Filter</h4>
-                                                <Categories categories={this.props.categories}
-                                                            getProducts={this.props.getProducts}/>
+                                                <Categories categories={categories}
+                                                            getProducts={getProducts}/>
                                             </div>
                                         </aside>
                                     </div>
@@ -32,9 +39,10 @@ class Shop extends Component {
                                         <div className="goods goods--style-1">
                                             <div className="__inner">
                                                 <div className="row">
-                                                    {this.props.products.map(product => (
-                                                        <ProductCard key={product.id} product={product} addToCart={this.props.addToCart}
-                                                                     getCategoryName={this.props.getCategoryName}/>
+                                                    {products.map(product => (
+                                                        <ProductCard key={product.id} product={product}
+                                                                     addToCart={addToCart}
+                                                                     getCategoryName={getCategoryName}/>
                                                     ))}
                                                 </div>
                                             </div>
@@ -58,9 +66,8 @@ class Shop extends Component {
                     </section>
                 </main>
             </>
-        );
-    }
+        </>
+    );
 }
 
-
-export default Shop;
+export default Category;

@@ -12,7 +12,9 @@ class Categories extends Component {
                     <ul className="list">
                         {this.props.categories.map((category, index) => (
                             <li className="list__item" key={index}>
-                                <a className="list__item__link" href="/">{category.categoryName}</a>
+                                <p className="list__item__link" onClick={() => this.props.getProducts(category.id)}>
+                                    {category.categoryName}
+                                </p>
                             </li>
                         ))}
                     </ul>

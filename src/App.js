@@ -9,13 +9,14 @@ import BlogList from "./pages/BlogList";
 import BlogDetail from "./pages/BlogDetail";
 import Cart from "./pages/Cart";
 import ProductDetail from "./pages/ProductDetail";
-
+import Category from "./pages/Category";
 
 export default class App extends Component {
     state = {
         categories: [],
         blog: [],
-        products: []
+        products: [],
+        cart: []
     }
 
 
@@ -39,7 +40,7 @@ export default class App extends Component {
     }
 
     getBlogBySlugs = (slug) => {
-        return this.state.blog.filter(item => item.slug === slug);
+        return this.state.blog.find(item => item.slug === slug);
     }
 
     getProducts = (categoryId) => {
@@ -62,20 +63,45 @@ export default class App extends Component {
         return this.state.products.find((product) => product.slug === slug);
     };
 
+    addToCart = (product) => {
+        let newCart = this.state.cart;
+        var addedItem = newCart.find((c) => c.product.id === product.id);
+        if (addedItem) {
+            addedItem.quantity += 1;
+        } else {
+            newCart.push({product: product, quantity: 1});
+        }
+        this.setState({cart: newCart});
+    };
+
+    removeToCart = (product) => {
+        let newCart = this.state.cart.filter((c) => c.product.id !== product.id);
+        this.setState({cart: newCart});
+    };
+
+
     render() {
         return (
             <>
-                <Header/>
+                <Header cart={this.state.cart} categories={this.state.categories}/>
                 <Routes>
+
+                    <Route path="/shop/:categoryId"
+                           element={<Category categories={this.state.categories} products={this.state.products}
+                                              addToCart={this.addToCart}
+                                              getProducts={this.getProducts} getCategoryName={this.getCategoryName}/>}/>
                     <Route path="/"
                            element={<Shop categories={this.state.categories} products={this.state.products}
-                                          getCategoryName={this.getCategoryName}/>}/>
+                                          addToCart={this.addToCart}
+                                          getProducts={this.getProducts} getCategoryName={this.getCategoryName}/>}/>
                     <Route path="/contact" element={<Contact/>}/>
                     <Route path="/about" element={<About/>}/>
                     <Route path="/blog/:slug" element={<BlogDetail getBlogBySlugs={this.getBlogBySlugs}/>}/>
                     <Route path="/blog" element={<BlogList blog={this.state.blog}/>}/>
-                    <Route path="/cart" element={<Cart/>}/>
-                    <Route path="/product/:slug" element={<ProductDetail getProductBySlug={this.getProductBySlug}/>}/>
+                    <Route path="/cart" element={<Cart cart={this.state.cart} removeToCart={this.removeToCart}/>}/>
+                    <Route path="/product/:slug"
+                           element={<ProductDetail getProductBySlug={this.getProductBySlug} addToCart={this.addToCart}
+                                                   getCategoryName={this.getCategoryName}/>}/>
 
                     <Route path="*" element={<Shop/>}/>
                 </Routes>

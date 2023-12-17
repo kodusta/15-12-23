@@ -9,7 +9,7 @@ class ProductCard extends Component {
                 <div className="col-12 col-sm-6 col-lg-4">
                     <div className="__item">
                         <figure className="__image">
-                            <img width={188} src="img/goods_img/1.jpg" alt="demo"/>
+                            <img width={188} src={process.env.PUBLIC_URL + "/" + this.props.product.image}/>
                         </figure>
                         <div className="__content">
                             <h4 className="h6 __title">
@@ -26,10 +26,11 @@ class ProductCard extends Component {
                                 <span
                                     className="product-price__item product-price__item--new">${this.props.product.price}</span>
                             </div>
-                            <a className="custom-btn custom-btn--medium custom-btn--style-1" href="/">
+                            <p className="custom-btn custom-btn--medium custom-btn--style-1"
+                               onClick={() => this.props.addToCart(this.props.product)}>
                                 <i className="fontello-shopping-bag"/>
                                 Add to cart
-                            </a>
+                            </p>
                         </div>
                         <span className="product-label product-label--sale">Sale</span>
                     </div>

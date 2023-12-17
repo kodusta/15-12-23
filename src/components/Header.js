@@ -35,13 +35,16 @@ class Header extends Component {
                                             <li className="has-submenu">
                                                 <a href="/">Categories</a>
                                                 <ul className="submenu">
-                                                    <li><a href="services.html">Services</a></li>
-                                                    <li><a href="products.html">Products</a></li>
-                                                    <li><a href="products_details.html">Product Details</a></li>
-                                                    <li><a href="gallery_1.html">Gallery 1</a></li>
-                                                    <li><a href="gallery_2.html">Gallery 2</a></li>
-                                                    <li><a href="typography.html">Typography</a></li>
-                                                    <li><a href="404.html">404 page</a></li>
+                                                    {this.props.categories.map((category) => {
+                                                        return (
+                                                            <li key={category.id}>
+                                                                <Link
+                                                                    to={"/shop/" + category.id}>{category.categoryName}</Link>
+                                                            </li>
+                                                        );
+                                                    })}
+
+
                                                 </ul>
                                             </li>
                                             <li>
@@ -53,7 +56,7 @@ class Header extends Component {
                                             <li className="li-cart">
                                                 <Link to="/cart">
                                                     <i className="fontello-shopping-bag"/><span
-                                                    className="total">0</span>
+                                                    className="total">{this.props.cart.length}</span>
                                                 </Link>
                                             </li>
                                         </ul>

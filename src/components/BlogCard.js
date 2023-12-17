@@ -8,7 +8,7 @@ class BlogCard extends Component {
                 <div className="col-12 col-sm-6 col-lg-4">
                     <div className="__item __item--preview">
                         <figure className="__image">
-                            <img src={"/" + this.props.item.image}
+                            <img src={process.env.PUBLIC_URL + "/" + this.props.item.image}
                                  alt="demo"/>
                         </figure>
                         <div className="__content">

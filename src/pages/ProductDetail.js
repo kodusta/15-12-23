@@ -3,11 +3,12 @@ import Hero from "../components/Hero";
 import {useParams} from "react-router-dom";
 
 
-const ProductDetail = (getProductBySlug) => {
+const ProductDetail = ({getProductBySlug, getCategoryName, addToCart}) => {
     const {slug} = useParams();
 
-    const product = getProductBySlug.getProductBySlug(slug);
-    console.log(product);
+    const product = getProductBySlug(slug);
+    const CategoryName = getCategoryName(product.categoryId);
+
 
     return (
         <>
@@ -23,22 +24,23 @@ const ProductDetail = (getProductBySlug) => {
                                 <div className="product-single">
                                     <div className="row">
                                         <div className="col-12 col-lg-7">
-                                            <div className="__product-img">y
+                                            <div className="__product-img">
                                                 <img width={330}
-                                                     src={process.env.PUBLIC_URL + "/img/goods_img/2.jpg"}
+                                                     src={process.env.PUBLIC_URL + "/" + product.image}
                                                      alt="demo"/>
                                                 <span className="product-label product-label--new">New</span>
                                             </div>
                                         </div>
                                         <div className="col-12 col-lg-5">
                                             <div className="content-container">
-                                                <h3 className="__name">Brocoli</h3>
+                                                <h3 className="__name">{product.productName}</h3>
                                                 <div className="__categories">
                                                     Category:
-                                                    <span>Vegetables</span>
+                                                    <span>{CategoryName}</span>
                                                 </div>
                                                 <div className="product-price">
-                                                    <span className="product-price__item product-price__item--new">3,35 $</span>
+                                                    <span
+                                                        className="product-price__item product-price__item--new">${product.price}</span>
                                                 </div>
                                                 <div className="rating">
                                                         <span className="rating__item rating__item--active"><i
@@ -53,26 +55,12 @@ const ProductDetail = (getProductBySlug) => {
                                                         className="fontello-star"/></span>
                                                 </div>
                                                 <p>
-                                                    The generated Lorem Ipsum is therefore always free from
-                                                    repetition injected humour, or non-characteristic words etc.
+                                                    {product.desc}
                                                 </p>
-                                                <p>
-                                                    Susp endisse ultricies nisi vel quam suscipit. Sabertooth
-                                                    peacock flounder; chain pickerel hatchetfish, pencilfish
-                                                    snailfish
-                                                </p>
-                                                <form className="__add-to-cart" action="/">
-                                                    <div className="quantity-counter js-quantity-counter">
-                                                        <span className="__btn __btn--minus"/>
-                                                        <input className="__q-input" type="text" defaultValue={1}/>
-                                                        <span className="__btn __btn--plus"/>
-                                                    </div>
-                                                    <button
-                                                        className="custom-btn custom-btn--medium custom-btn--style-1"
-                                                        type="submit"><i
-                                                        className="fontello-shopping-bag"/>Add to Cart
-                                                    </button>
-                                                </form>
+                                                <button onClick={() => addToCart(product)}
+                                                        className="custom-btn custom-btn--medium custom-btn--style-1">
+                                                    <i className="fontello-shopping-bag"/>Add to Cart
+                                                </button>
                                             </div>
                                         </div>
                                         <div className="col-12">
@@ -84,43 +72,9 @@ const ProductDetail = (getProductBySlug) => {
                                                 <div className="tab-content">
                                                     <div className="tab-content__item is-visible">
                                                         <p>
-                                                            The generated Lorem Ipsum is therefore always free from
-                                                            repetition injected humour, or non-characteristic words
-                                                            etc. Susp endisse ultricies nisi vel quam suscipit
+                                                            {product.desc}
                                                         </p>
-                                                        <p>
-                                                            Sabertooth peacock flounder; chain pickerel hatchetfish,
-                                                            pencilfish snailfish filefish Antarctic icefish goldeye
-                                                            aholehole trumpetfish pilot fish airbreathing catfish,
-                                                            electric ray sweeper.
-                                                        </p>
-                                                        <div className="description-table"
-                                                             style={{maxWidth: '370px'}}>
-                                                            <table>
-                                                                <tbody>
-                                                                <tr>
-                                                                    <td>Weight</td>
-                                                                    <td>1 kg</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Country of Origin</td>
-                                                                    <td>Agro Farm</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Quality</td>
-                                                                    <td>Organic</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Сheck</td>
-                                                                    <td>Healthy</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Min Weight</td>
-                                                                    <td>250 Kg</td>
-                                                                </tr>
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
+
                                                     </div>
                                                 </div>
                                             </div>
